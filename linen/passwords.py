@@ -1,0 +1,5 @@
+PASSWORDS = {
+    'SUPER': '',
+    'Django': '',
+    'MySQL': '',
+}
