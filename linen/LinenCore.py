@@ -2,7 +2,6 @@ import argparse, os, sys
 sys.path.append(os.getcwd())
 from inspect import getmembers, isfunction
 from linen import commands
-from linen.config import LinenSettings
 
 def get_functions():
     """get a list of linen commands, strip out private ones"""

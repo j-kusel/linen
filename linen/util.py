@@ -1,5 +1,5 @@
 from linen.error import PassError
-import sys
+import sys, glob
 
 def checkpass():
     """confirm the validity of the passwords.py file in the current working directory"""
@@ -26,5 +26,6 @@ def globfiles(dir, ignore, ext):
     """search a directory for files with certain extensions, ignoring list of specified files.
     returns a {<filename>: <path>} dictionary."""
     tempfiles = glob.glob('{}/*.{}'.format(dir, ext))
-    badfiles = list(set(ignore.append('__init__.py'))) # filter duplicates!
+    ignore.append('__init__.py')
+    badfiles = list(set(ignore)) # filter duplicates!
     return {os.path.basename(tf):tf for tf in tempfiles if os.path.exists(tf) and os.path.basename(tf) not in badfiles}

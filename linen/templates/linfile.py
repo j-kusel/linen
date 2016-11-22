@@ -1,5 +1,3 @@
-from linen.util import checkpass
-
 # the location of your remote repository + branch
 REPO = {
     'URL': '',
@@ -29,36 +27,32 @@ MEDIA_HOSTS = ''
 # and the others will be under ServerAlias
 DOMAIN_NAMES = ''
 
-# store PASSWORDS as a dictionary in a passwords.py file in the
-# Django root directory, then remove this from your version control!
-# do NOT override PASSWORDS below!
-PASSWORDS = checkpass()
-
-USERS = {}
+USERS = {
 
 # user for login - goes to env.user
-USERS['DEBIAN_USER'] = ''
+    'DEBIAN_USER': '',
 
 # register Django superuser + MySQL/Apache info
-USERS['SUPERUSER'] = {
-    'name': '',
-    'username': '',
-    'email': '',
-    'password': PASSWORDS['Django'],
-}
+    'SUPERUSER': {
+        'name': '',
+        'username': '',
+        'email': '',
+    },
 
-USERS['MYSQL_INFO'] = {
-    'user': '',
-    'password': PASSWORDS['MySQL'],
-}
+    'MYSQL_INFO': {
+        'user': '',
+        'name': '',
+        'email': '',
+    },
 
-USERS['APACHE_INFO'] = {
-    'user': '',
-    'name': USERS['SUPERUSER']['name'],
-    'email': USERS['SUPERUSER']['email'],
+    'APACHE_INFO': {
+        'user': '',
+        'name': '',
+        'email': '',
 
     # verbosity of /var/log/apache2/error.log file
     # options from brief to verbose are:
     # 'emerg', 'alert', 'crit', 'error', 'warn', 'notice', 'info', 'debug'
-    'loglevel': 'warn'
+        'loglevel': 'warn',
+    },
 }

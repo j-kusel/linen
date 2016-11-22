@@ -20,7 +20,7 @@ setup(name='linen',
     author='Jordan Kusel',
     author_email='jordankusel@my.unt.edu',
     license='GNU GPLv3+',
-    packages=['linen'],
+    packages=['linen','linen.templates'],
     install_requires=[
         'fabric3',
     ],
